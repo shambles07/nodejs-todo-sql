@@ -9,7 +9,7 @@ const argv = yargs.argv;
 var taskinput = argv._[0];
 
 // open the database
-var taskdb = 'tasks.db';
+var taskdb = './db/tasks.db';
 let db = new sqlite3.Database(taskdb);
 
 //let placeholders = command;

@@ -11,18 +11,20 @@ var id = argv._[1];
 
 // open the database
 
-var taskdb = 'tasks.db';
+var taskdb = './db/tasks.db';
 
 let db = new sqlite3.Database(taskdb);
-let sql = `SELECT \* FROM tasks`;
+let sql = `SELECT `+ command + ` FROM tasks WHERE taskid=` + id;
 
 
 // insert one row into the tasks table
-db.run(sql, function(err) {
+db.all(sql, [], (err, row) => {
 	if (err) {
-		return console.log(err.message);
+		throw err;
+		//return console.log(err.message);
 	}
-	console.log(`${this.changes}`);
+	//console.log(
+	console.log(row);
 });
 
 db.close();

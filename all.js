@@ -2,9 +2,8 @@ const sqlite3 = require('sqlite3').verbose();
 
 // open a database connection
 
-var taskdb = 'tasks.db';
+var taskdb = './db/tasks.db';
 let db = new sqlite3.Database(taskdb);
-let db = new sqlite3.Database('./db/tasks.db');
 let sql = `SELECT \* FROM tasks`;
 
 db.all(sql, [], (err, row) => {

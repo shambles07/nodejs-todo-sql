@@ -7,7 +7,7 @@ var rowid = argv._[0];
 //var id = argv._[1];
 
 // open a database connection
-var taskdb = 'tasks.db';
+var taskdb = './db/tasks.db';
 let db = new sqlite3.Database(taskdb);
 
 let db = new sqlite3.Database('./db/tasks.db');

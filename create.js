@@ -1,7 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
 
 // create the database
-var taskdb = 'tasks.db';
+var taskdb = './db/tasks.db';
 let db = new sqlite3.Database(taskdb);
 
 // create the initial tasks table
